@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>LETTER</title>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}body{min-height:100vh;display:grid;place-items:center;overflow:hidden;padding:16px;font-family:Outfit,sans-serif;background:radial-gradient(circle at 15% 15%,#fff,transparent 25%),radial-gradient(circle at 85% 20%,#ffc7dd,transparent 30%),linear-gradient(135deg,#fff6fa,#ffe0ec,#f1d9ed)}.glow{position:fixed;width:400px;height:400px;border-radius:50%;filter:blur(120px);opacity:.28}.one{top:-200px;left:-160px;background:#ff78a9;animation:g1 10s infinite alternate}.two{right:-180px;bottom:-180px;background:#b993ff;animation:g2 12s infinite alternate}@keyframes g1{to{transform:translate(140px,100px)}}@keyframes g2{to{transform:translate(-120px,-90px)}}.stars{position:fixed;inset:0;pointer-events:none}.star{position:absolute;width:3px;height:3px;background:#fff;border-radius:50%;box-shadow:0 0 12px #fff;animation:f var(--d) linear infinite}@keyframes f{from{transform:translateY(110vh);opacity:0}15%,80%{opacity:1}to{transform:translateY(-15vh) translateX(var(--m));opacity:0}}.box{width:min(560px,100%);position:relative;z-index:1}.page{display:none;max-height:94vh;overflow:auto;padding:38px 32px;border:1px solid #fff;border-radius:34px;background:#ffffffdf;box-shadow:0 35px 100px #69264a2e;animation:a .4s ease}.page.active{display:block}@keyframes a{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}.center{text-align:center}.label{color:#df5b8b;font-size:10px;font-weight:800;letter-spacing:3px;text-align:center}.brand{letter-spacing:5px}h1{margin:14px 0;color:#321520;font:400 42px "Instrument Serif",serif;text-align:center}.intro{margin:18px 0 24px;color:#704657;font-size:14px;line-height:1.7;text-align:center}input,select{width:100%;padding:14px 17px;border:1.5px solid #efc4d5;border-radius:999px;outline:0;background:#fff;color:#40212e;font:14px Outfit}input:focus,select:focus{border-color:#e85b90;box-shadow:0 0 0 5px #e85b9014}.btn{width:100%;margin-top:18px;padding:15px;border:0;border-radius:999px;background:linear-gradient(100deg,#e84d84,#f16f9d);color:#fff;cursor:pointer;font:700 14px Outfit}.btn.dark{background:#321520}.err{display:none;margin-top:10px;padding:10px;border-radius:12px;background:#ffe7ef;color:#9f3154;font-size:12px;text-align:center}.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:22px}.travel{grid-template-columns:repeat(3,1fr)}.opt{padding:17px 8px;border:2px solid transparent;border-radius:20px;background:#fff3f7;cursor:pointer;text-align:center}.opt.selected{border-color:#e85b90;background:#fff}.icon{display:block;font-size:22px}.small{font-size:11px;color:#92717e}.form label{display:block;margin:14px 0 7px;color:#542b3c;font-size:11px;font-weight:800;letter-spacing:1px}.letter{padding:17px 15px;border:1px solid #f3d0dc;border-radius:20px;background:#fff4f8;text-align:center}.letter .icon{font-size:29px}.letter h2{font:24px "Instrument Serif",serif;color:#321520}.open{margin-top:11px;padding:10px 18px;border:0;border-radius:99px;background:#321520;color:#fff;font:700 11px Outfit}.content{display:none;margin-top:12px;padding:16px;border:1px solid #f1ccd9;border-radius:17px;background:#fff;color:#542b3c;font-size:12px;line-height:1.6}.content.show{display:block}.content h2{font:22px "Instrument Serif",serif;color:#321520}.quote{margin:11px 0;padding:10px;border-radius:13px;background:#fff1f6;font-style:italic;text-align:center}.sign{text-align:right}.summary{margin-top:22px;padding:18px;border-radius:20px;background:#fff1f6;color:#704657;text-align:center;font-size:13px;line-height:1.8}.note{display:none;margin-top:12px;color:#704657;text-align:center;font-size:12px}@media(max-width:500px){.page{padding:30px 20px}h1{font-size:38px}.travel{grid-template-columns:repeat(2,1fr)}}
+</style>
+<style>.progress{display:flex;justify-content:center;gap:6px;margin:0 0 18px}.progress i{width:7px;height:7px;border-radius:50%;background:#f1c0d2}.progress i.on{width:20px;border-radius:99px;background:#e85b90}.back{margin-bottom:14px;border:0;background:none;color:#b45a7f;cursor:pointer;font:600 12px Outfit}.special{margin-top:14px;padding:14px;border:1px solid #f3d0dc;border-radius:18px;background:#fff7fa}.confetti{position:fixed;inset:0;pointer-events:none;overflow:hidden;z-index:9}.confetti i{position:absolute;top:-20px;width:10px;height:16px;animation:fall 3s linear infinite}@keyframes fall{to{transform:translateY(110vh) rotate(540deg)}}</style>
+</head>
+<body>
+<div class="glow one"></div><div class="glow two"></div><div class="stars" id="stars"></div>
+<div class="box">
+
+<section id="p1" class="page active center">
+<div class="label brand">BEST FRIENDS LETTER</div><h1>Just a little <i>moment</i></h1><p class="intro">No matter how far we go, our friendship will always stay close🌷.<br>Life is better with a best friend by your side.🌸</p>
+<input id="name" placeholder="Enter your name"><div id="ename" class="err">Please enter the correct name.</div><button class="btn" onclick="nameCheck()">Enter</button>
+</section>
+
+<section id="p2" class="page">
+<div class="label">STEP 1</div><h1>Best <i>Friend?</i></h1><p class="intro">A small question before we continue.</p>
+<div class="grid">
+<div class="opt" onclick="pick('friend',this,'Yes')"><span class="icon">🎀</span><b>Yes</b><div class="small">Of course</div></div>
+<div class="opt" onclick="pick('friend',this,'No')"><span class="icon">🙈</span><b>No</b><div class="small">Maybe soon</div></div>
+</div><div id="efriend" class="err">Please choose an option first.</div><button class="btn" onclick="next('friend',2)">Continue</button>
+</section>
+
+<section id="p3" class="page">
+<div class="label">STEP 2</div><h1>Make a <i>plan</i></h1><p class="intro">Choose the details for our little plan.</p>
+<div class="form">
+<label>DATE *</label><input id="date" type="date"><label>TIME *</label><input id="time" type="time">
+<label>LOCATION *</label><select id="location" onchange="otherLocation()"><option value="">Choose a location</option><option>Durgapur</option><option>Asansol</option><option>Bardhaman</option><option>Kolkata</option><option>Digha</option><option>Mountain Place</option><option value="Other">Other Place</option></select>
+<div id="otherBox" style="display:none;margin-top:10px"><input id="otherLocation" placeholder="Enter other location"></div>
+<label>CAFÉ *</label><input id="cafe" placeholder="Your favourite café">
+</div><div id="eplan" class="err">Please fill in every plan detail.</div><button class="btn" onclick="plan()">Continue</button>
+</section>
+
+<section id="p4" class="page">
+<div class="label">STEP 3</div><h1>How will you <i>travel?</i></h1><p class="intro">Pick the ride that feels right.</p>
+<div class="grid travel">
+<div class="opt" onclick="pick('travel',this,'Bus')"><span class="icon">🚌</span><b>Bus</b></div><div class="opt" onclick="pick('travel',this,'Car')"><span class="icon">🚗</span><b>Car</b></div><div class="opt" onclick="pick('travel',this,'Train')"><span class="icon">🚆</span><b>Train</b></div><div class="opt" onclick="pick('travel',this,'Walk')"><span class="icon">🚶</span><b>Walk</b></div><div class="opt" onclick="pick('travel',this,'Bike')"><span class="icon">🏍️</span><b>Bike</b></div>
+</div><div id="etravel" class="err">Please choose how you will travel.</div><button class="btn" onclick="next('travel',4)">Continue</button>
+</section>
+
+<section id="p5" class="page">
+<div class="label">ONE LAST QUESTION</div><h1>Are you <i>ready?</i></h1><p class="intro">A little plan can become a lovely memory.</p>
+<div class="grid"><div class="opt" onclick="pick('ready',this,'Ready')"><span class="icon">🙌</span><b>Ready</b><div class="small">Let's do it</div></div><div class="opt" onclick="pick('ready',this,'Maybe')"><span class="icon">👍</span><b>Maybe</b><div class="small">Need some time</div></div></div>
+<div id="eready" class="err">Please choose an option first.</div><button class="btn" onclick="next('ready',5)">Continue</button>
+</section>
+
+<section id="p6" class="page">
+<div class="label">A LITTLE NOTE</div><h1>For <i>Mehreen</i></h1>
+<div class="letter"><span class="icon">💌</span><h2>A Little Letter</h2><div class="small">There is something inside for you.</div><button class="open" onclick="document.getElementById('letter').classList.add('show')">💌 Open Letter</button></div>
+<div id="letter" class="content"><h2>Dear Mehreen,</h2><p>Some people enter our lives quietly, but somehow leave behind memories that stay for a long time.</p><p>This little space is just a reminder that simple moments can mean a lot.</p><div class="quote">“The best memories are often created from the simplest moments.”</div><div class="sign">With good thoughts,<br><b>By Shafir</b></div></div>
+<button class="btn" onclick="go(7)">Continue</button>
+</section>
+
+<section id="p7" class="page">
+<div class="label">A LITTLE ABOUT YOU</div><h1>Your <i>Socials</i></h1><p class="intro">Add at least one username before finishing.</p>
+<div class="form"><label>INSTAGRAM</label><input id="instagram" placeholder="@username"><label>SNAPCHAT</label><input id="snapchat" placeholder="@username"><label>OTHER SOCIAL MEDIA</label><input id="otherSocial" placeholder="Username / handle"></div>
+<div id="esocial" class="err">Please enter at least one username.</div><button id="finish" class="btn" onclick="send()">Finish</button>
+</section>
+
+<section id="p8" class="page center">
+<div class="label">ALL DONE</div><div class="icon" style="font-size:44px">🌸</div><h1>Portal <i>complete</i></h1><p class="intro">Thank you for completing this little journey.<br>Your response has been sent successfully.</p><div id="summary" class="summary"></div><button class="btn dark" onclick="closePortal()">Close Portal</button><p id="close" class="note">The portal is finished. It will restart now.</p>
+</section>
+</div>
+
+<script>
+const S={name:"",friend:"",date:"",time:"",location:"",cafe:"",travel:"",ready:""};
+const stars=document.getElementById("stars");for(let i=0;i<42;i++){let x=document.createElement("i");x.className="star";x.style.left=Math.random()*100+"%";x.style.setProperty("--d",11+Math.random()*12+"s");x.style.setProperty("--m",-100+Math.random()*200+"px");stars.append(x)}
+function go(n){document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));document.getElementById("p"+n).classList.add("active")}
+function err(x){let e=document.getElementById(x);e.style.display="block";setTimeout(()=>e.style.display="none",2200)}
+function nameCheck(){if(document.getElementById("name").value.trim().toLowerCase()!="mehreen")return err("ename");S.name="Mehreen";go(2)}
+function pick(k,e,v){e.parentElement.querySelectorAll(".opt").forEach(x=>x.classList.remove("selected"));e.classList.add("selected");S[k]=v}
+function next(k,p){if(!S[k])return err("e"+k);go(p+1)}
+function otherLocation(){document.getElementById("otherBox").style.display=document.getElementById("location").value=="Other"?"block":"none"}
+function plan(){let l=document.getElementById("location").value;if(l=="Other")l=document.getElementById("otherLocation").value.trim();let d=document.getElementById("date").value,t=document.getElementById("time").value,c=document.getElementById("cafe").value.trim();if(!d||!t||!l||!c)return err("eplan");Object.assign(S,{date:d,time:t,location:l,cafe:c});go(4)}
+async function send(){let i=instagram.value.trim(),s=snapchat.value.trim(),o=otherSocial.value.trim();if(!i&&!s&&!o)return err("esocial");finish.disabled=true;finish.textContent="Sending...";try{let r=await fetch("https://formsubmit.co/ajax/mdshafirsyed@gmail.com",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify({_subject:"New Portal Response — Mehreen",_template:"table",Name:S.name,"Best Friend":S.friend,Date:S.date,Time:S.time,Location:S.location,Cafe:S.cafe,Travel:S.travel,Ready:S.ready,Instagram:i||"Not provided",Snapchat:s||"Not provided","Other Social":o||"Not provided"})});if(!r.ok)throw 0;summary.innerHTML=`<b>Plan confirmed</b><br>${S.location} · ${S.cafe}<br>${S.travel} · ${S.ready}`;go(8)}catch(e){alert("Details could not be sent. Please try again.");finish.disabled=false;finish.textContent="Finish"}}
+function closePortal(){close.style.display="block";setTimeout(()=>{window.close();location.reload()},900)}
+name.addEventListener("keydown",e=>{if(e.key=="Enter")nameCheck()});
+</script>
+<script>
+/* Extra polish: progress, back navigation, optional note and final confetti */
+const enhancedPages=document.querySelectorAll('.page');
+enhancedPages.forEach((page,index)=>{let p=document.createElement('div');p.className='progress';for(let i=0;i<8;i++){let d=document.createElement('i');if(i===index)d.className='on';p.appendChild(d)}page.prepend(p);if(index>0){let b=document.createElement('button');b.className='back';b.textContent='← Back';b.onclick=()=>go(index);page.prepend(b)}});
+const note=document.createElement('div');note.className='special';note.innerHTML='<label class="form-label">SPECIAL NOTE <span style="font-weight:400">(optional)</span></label><input id="specialNote" placeholder="Anything you would like to add?">';document.getElementById('cafe').after(note);
+const oldPlan=plan;plan=function(){S.note=document.getElementById('specialNote').value.trim()||'Not provided';oldPlan()};
+const oldGo=go;go=function(n){oldGo(n);document.querySelectorAll('.page').forEach((page,index)=>page.querySelectorAll('.progress i').forEach((dot,i)=>dot.classList.toggle('on',i===n-1)));if(n===8){let c=document.createElement('div');c.className='confetti';for(let i=0;i<25;i++){let x=document.createElement('i');x.style.left=Math.random()*100+'%';x.style.animationDelay=Math.random()*2+'s';x.style.background=['#f16f9d','#b993ff','#ffd36e','#8ed9c5'][i%4];c.appendChild(x)}document.body.appendChild(c);setTimeout(()=>c.remove(),3500)}};
+</script>
+</body>
+</html>
